@@ -1,66 +1,3 @@
-// let hello = 'Hello World!';
-
-// console.log(hello);
-
-// //定数
-// const koko = "定数です";
-
-// console.log(koko);
-
-
-// let arr = ['1', '2', '3','hello'];
-
-
-// console.log(arr[0]);
-
-// //ループ
-// let index = 0;
-// while(index < arr.length){
-  
-//   console.log(arr[index]);
-//   index++;
-// }
-
-
-// //if else
-// // if(arr.length > 5){
-// //   console.log('kokokokokok');
-// // }else{
-// //   console.log('lloloo');
-// // }
-
-
-
-// //関数
-// const test = (arg) =>{
-//   if(arr.length > arg){
-//     console.log('kokokokokok');
-//   }else{
-//     console.log('lloloo');
-//   } 
-// }
-
-// //オブジェクト
-
-// const unk = {
-//   color:'pink',
-//   size: 22,
-//   pur: 'mint',
-//   go:()=>{
-//     console.log('tore');
-//   }
-// }
-
-// console.log(window.alert('stop'));
-
-// console.log(document.getElementsByTagName('button')[0]);
-
-
-// document.getElementsByTagName('button')[0].addEventListener('click', () =>{
-// window.alert('testtest');
-// });
-
-
 const quiz =[
   {
     question:'ゲーム市場、最も売れたゲーム機は次の内どれ？',
@@ -81,16 +18,9 @@ const quiz =[
 ];
 
 
-
 const quizLength = quiz.length;
 let quizIndex = 0;
 let score = 0;
-
-
-
-
-
-
 
 
 //htmlオブジェクトをとってくる場合、暗黙の了解で変数の前に$を付ける
@@ -100,16 +30,14 @@ let buttonLength = $button.length;
 const setupQuiz= () =>{
   document.getElementById('js-question').textContent = quiz[quizIndex].question;
   let buttonIndex = 0;
- 
+
   while(buttonIndex < buttonLength){
     $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
-    buttonIndex++;  
+    buttonIndex++;
   }
 }
 
 setupQuiz();
-
-
 
 const clickHandler = (e) =>{
   if(quiz[quizIndex].correct === e.target.textContent){
@@ -145,8 +73,6 @@ while(handlerIndex < buttonLength){
   $button[handlerIndex].addEventListener('click', (e)=>{
     clickHandler(e);
   });
-  
+
   handlerIndex++;
 }
-
-
